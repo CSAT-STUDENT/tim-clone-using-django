@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 Bhumika has put this comment
 Man[reet has donek jbjkwbkwqbkjb]
+Changes codeeeee....
 """
 
 from pathlib import Path
