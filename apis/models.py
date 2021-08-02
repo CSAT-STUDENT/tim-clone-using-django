@@ -6,3 +6,20 @@ from django.db import models
 class Simple(models.Model):
     test = models.CharField(max_length=100)
     newfld = models.CharField(max_length=100)
+
+
+
+#just a type of Drink, Hot, cold, Smoothie
+DRINK_TYPE = (
+    ('COLD','COLD'),
+   ('HOT','HOT'),
+   ('SMOOTHIE','SMOOTHIE'),
+   ('PROMO','PROMO'),
+   ('LUNCH', 'LUNCH'),
+   ('BREAKFAST', 'BREAKFAST'),
+   ('SPECIAL','SPECIAL'),
+   ('DONUT','DONUT')
+)
+# class Items(models.Model):
+#     item_type = models.CharField(max_length=255, choices=DRINK_TYPE, default='COLD')
+

@@ -6,27 +6,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-<script src="semantic/dist/semantic.min.js"></script>
+
 <link rel="stylesheet"  href= "{% static './css/main.css' %}"/>
-<script src="{% static './js/main.js'%}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     
 </head>
 <body>
-    {% include 'includes/header.html'%}
+    <div class="ui equal width grid" style="margin-top: 29px;">
+        <div class="column">
+          <div class="" style="margin: 20px;">
+             <!-- here mostly We will put the Side Bar Navigations Specially -->
+            {% include 'includes/nav.html'%}
+          </div>
+        </div>
+        <div class="eight wide column"  style="font-size: 34px;">
+          <div class="ui segment" style="margin: 20px; font-size: 34px;">
 
-
-{% include 'includes/nav.html'%}
-
-{% block content%}
+            <!-- here we will have Diffrent Analytics Part Going on....  -->
+            {% block content%}
 
 {%endblock%}
-  
+          </div>
+        </div>
+        <div class="column" style="margin-top: 20px; margin-right: 12px;">
+          <div class="ui segment" style=" font-size: 34px;">
+         
+          <div class="ui top attached label"><h1 style="text-align:center;">Added Items So far</h1></div>
+          <div class="ui four column relaxed grid">
+             
+            <div class="ui bulleted list" style="margin-top: 12px;">
+              <div class="item" style="font-size: 24px;">Gaining Access</div>
+              
+              
+             
+          </div>
+          </div>
+        </div>
+      </div>
+    
+    
 
-{% include 'includes/footer.html'%}
+
+
+
+
+  
+<!-- 
+{% include 'includes/footer.html'%} -->
 </body>
 </html>

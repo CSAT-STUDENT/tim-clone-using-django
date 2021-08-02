@@ -1,1 +1,1 @@
-console.log("hellon this is from static directory... ")
+console.log('The JavaScript Has been loaded up')
