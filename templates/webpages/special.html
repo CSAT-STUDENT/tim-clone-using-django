@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+<div class="ui top attached label"><h1 style="text-align:center; margin: 2px;">Cold Coffee</h1></div>
+
+   
+   {% for item in special_items %}
+   <h1> {{item.product_name}} </h1>
+   {% endfor %}
+   
+
+<script>
+    document.getElementById('COLD').addEventListener('click', (e)=>{
+        e.preventDefault();
+        console.log('Need to Create a element here..')
+    })
+</script>
+  {% endblock %}
+  {{item}} 

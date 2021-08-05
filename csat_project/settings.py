@@ -90,7 +90,7 @@ DATABASES = {
             'NAME': 'CSAT_PROJECT',
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
-                'host': 'mongodb+srv://csat_project:csat_project@cluster0.scdl0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+                'host': 'mongodb+srv://csat_project:csat_project@cluster0.scdl0.mongodb.net/myFirstDatabase?ssl=true&ssl_cert_reqs=CERT_NONE'
             }  
         }
 }
