@@ -7,16 +7,15 @@
    
    {% for item in items %}
     <div class="column " style="margin-right:12px">
-        <button class="ui huge olive button" id={{item.item_type}} >{{item.item_type}}</button>
+       
+       <a href="{% url item.item_type %}"><button class="ui huge olive button" id={{item.item_type}} >{{item.item_type}}</button></a>
     </div>
+  
    {% endfor %}
+  
    
 </div>
-<script>
-    document.getElementById('COLD').addEventListener('click', (e)=>{
-        e.preventDefault();
-        console.log('Need to Create a element here..')
-    })
-</script>
+
+
   {% endblock %}
   {{item}} 
