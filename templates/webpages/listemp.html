@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+<div class="ui top attached label"><h1 style="text-align:center; margin: 2px;">list of employee</h1></div>
+
+   
+<table class="ui celled table">
+    <thead>
+      <tr style="font-size: 12px;"><th>Name</th>
+      <th style="font-size: 12px;">Position</th>
+      <th style="font-size: 12px;">Email</th>
+    </tr></thead>
+    
+    <tbody>
+        {% for emp in emps %}
+      <tr>
+        <td style="font-size: 12px;" data-label="Name">{{emp.name}}</td>
+        <td style="font-size: 12px;" data-label="Position">{{emp.position}}</td>
+        <td style="font-size: 12px;" data-label="Email">{{emp.email_id}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+   <div class="ui teal buttons" style="margin-top: 30px;margin-left: 160px;">
+    <a href="{% url 'dashboard' %}">
+        <button class="ui labeled icon button">
+            <i class="left chevron icon"></i>
+            Back
+          </button>
+    </a>
+ 
+    
+
+  </div>
+  <div class="ui teal buttons" style="margin-top: 30px;margin-left: 160px;">
+    <a href="{% url 'addemp' %}">
+        <button class="ui labeled icon button">
+            <i class="right chevron icon"></i>
+            Add Employee
+          </button>
+    </a>
+ 
+    
+
+  </div>
+   
+
+<script>
+    document.getElementById('COLD').addEventListener('click', (e)=>{
+        e.preventDefault();
+        console.log('Need to Create a element here..')
+    })
+</script>
+  {% endblock %}
+  {{item}} 

@@ -2,12 +2,51 @@
 {%load static%}
 {% block content %}
 
-<div class="ui top attached label"><h1 style="text-align:center; margin: 2px;">Cold Coffee</h1></div>
+<div class="ui top attached label"><h1 style="text-align:center; margin: 2px;">Specials</h1></div>
 
    
    {% for item in special_items %}
-   <h1> {{item.product_name}} </h1>
+   <div class="ui cards" style="margin-left: 100px;">
+    <div class="card">
+      <div class="content">
+        
+        <h2 class="ui header" id="nameofitem">
+            {{item.product_name}}
+        </h2>
+        <div class="meta" style="font-size: small;">
+            {{item.type}}
+        </div>
+        <div class="description" style="font-size: x-small;">
+            {{item.desc}}
+        </div>
+      </div>
+      <div class="extra content" style="margin-top: -30px;">
+        
+      
+          <div class="ui buttons">
+            <div class="ui teal buttons">
+            <button class="ui button"  id="btns">$ {{item.donation_price}}</button>
+            </div>
+          </div>
+    
+        </div>
+     
+      
+    </div>
+    
+    </div>
    {% endfor %}
+   <div class="ui teal buttons" style="margin-top: 30px;margin-left: 160px;">
+    <a href="{% url 'dashboard' %}">
+        <button class="ui labeled icon button">
+            <i class="left chevron icon"></i>
+            Back
+          </button>
+    </a>
+   
+    
+
+  </div>
    
 
 <script>

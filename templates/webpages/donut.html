@@ -2,11 +2,42 @@
 {%load static%}
 {% block content %}
 
-<div class="ui top attached label"><h1 style="text-align:center; margin: 2px;">Cold Coffee</h1></div>
+<div class="ui top attached label"><h1 style="text-align:center; margin: 2px;">Donuts </h1></div>
 
    
    {% for item in donut_items %}
-   <h1> {{item.name}} </h1>
+   <div class="ui cards" style="margin-left: 100px;">
+    <div class="card">
+      <div class="content">
+        
+        <h2 class="ui header" id="nameofitem">
+            {{item.name}}
+        </h2>
+        <div class="meta" style="font-size: small;">
+            {{item.type}}
+        </div>
+        <div class="description" style="font-size: x-small;">
+            {{item.desc}}
+        </div>
+      </div>
+      <div class="extra content" style="margin-top: -30px;">
+        
+      
+          <div class="ui buttons">
+            <div class="ui teal buttons">
+            <button class="ui button"  id="btns">S - $ {{item.price_s}}</button>
+            
+            <button class="ui button" id="btnm" >M - $ {{item.price_m}}</button>
+            <button class="ui button" id="btnl" >L - $ {{item.price_l}}</button>
+            </div>
+          </div>
+    
+        </div>
+     
+      
+    </div>
+    
+    </div>
    {% endfor %}
    
 

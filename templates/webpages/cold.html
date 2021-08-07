@@ -12,7 +12,7 @@
     <div class="card">
       <div class="content">
         
-        <h2 class="ui header">
+        <h2 class="ui header" id="nameofitem">
             {{item.name}}
         </h2>
         <div class="meta" style="font-size: small;">
@@ -27,10 +27,10 @@
       
           <div class="ui buttons">
             <div class="ui teal buttons">
-            <button class="ui button" >{{item.price_s}}</button>
+            <button class="ui button"  id="btns">S - $ {{item.price_s}}</button>
             
-            <button class="ui button">{{item.price_m}}</button>
-            <button class="ui button">{{item.price_l}}</button>
+            <button class="ui button" id="btnm" >M - $ {{item.price_m}}</button>
+            <button class="ui button" id="btnl" >L - $ {{item.price_l}}</button>
             </div>
           </div>
     
@@ -43,15 +43,15 @@
 
    {% endfor %}
    <div class="ui teal buttons" style="margin-top: 30px;margin-left: 160px;">
-    <button class="ui labeled icon button">
-      <i class="left chevron icon"></i>
-      Back
-    </button>
+    <a href="{% url 'dashboard' %}">
+        <button class="ui labeled icon button">
+            <i class="left chevron icon"></i>
+            Back
+          </button>
+    </a>
+   
     
-    <button class="ui right labeled icon button" style="margin-left: 10px;">
-      Add
-      <i class="plus square icon"></i>
-    </button>
+
   </div>
 
    
@@ -59,3 +59,4 @@
 
   {% endblock %}
   {{item}} 
+

@@ -41,9 +41,9 @@
           <div class="ui top attached label"><h1 style="text-align:center;">Added Items So far</h1></div>
           <div class="ui four column relaxed grid">
              
-            <div class="ui bulleted list" style="margin-top: 12px;">
+            <div class="ui bulleted list" id="listofitem" style="margin-top: 12px;">
               <div class="item" style="font-size: 24px;">Gaining Access</div>
-              
+              <!-- <div class="item" style="font-size: 24px;">Gaining Access</div> -->
               
              
           </div>
@@ -61,4 +61,122 @@
 <!-- 
 {% include 'includes/footer.html'%} -->
 </body>
+<script>
+  // console.log(document.getElementById('SCold Brew'))
+
+
+
+  class Item{
+    constructor(price,name,size){
+        this.price = price;
+        this.name = name;
+        this.size = size;
+        }
+}
+class UIhandle{
+    setListOnTable(item){
+        const list = document.getElementById('listofitem')
+        const row = document.createElement("tr")
+        row.innerHTML = `
+        <td>${Item.name}</td>
+        <td>${book.size}</td>
+        <td>${book.price}</td>
+        <td><a href="#" class="delete" >X</a></td>`
+    
+        
+    
+        list.appendChild(row)
+    }
+    // clearTask(){
+    // document.getElementById('title').value = ""
+    // document.getElementById('author').value =""
+    // document.getElementById('isbn').value = ""
+    // document.getElementById('category').value = ""
+    // }
+    // showAlert(msg,className){
+    //     const cont = document.querySelector(".container")
+    // const form = document.querySelector("#book-form")
+    // const ele = document.createElement("div")
+    // ele.className = `alert ${className}`;
+    // ele.appendChild(document.createTextNode(msg))
+    // cont.insertBefore(ele,form)
+    
+    // setTimeout(()=>{
+    //     document.querySelector(".alert").remove();
+    // }, 3000)
+        
+    // }
+
+    deleteBook(target){
+        if(target.className === 'delete'){
+            target.parentElement.parentElement.remove()
+            
+             
+        }
+    }
+}
+
+class Store{
+ static getItems(){
+     let items;
+     if(localStorage.getItem('items') === null){
+      items = [];
+     }
+     else{
+      items = JSON.parse(localStorage.getItem('items'))
+     }
+
+     return items;
+ }
+ static addItemToStore(item){
+     let items = Store.getItem();
+     items.push(item)
+     localStorage.setItem("items", JSON.stringify(items) )
+
+ }
+
+ static displayItems(){
+     let items = Store.getItems();
+     items.forEach(function(item)
+     {
+         const ui = new UIhandle;
+         ui.setListOnTable(item)
+     }
+     )
+ }
+//  static delfromStore(category){
+//      const items = Store.getItems();
+//      items.forEach(function(item,index){
+//         if(item.category === category){
+//             books.splice(index,1)
+//         }
+//      })
+//      localStorage.setItem("books", JSON.stringify(books))
+
+//  }
+
+
+}
+document.addEventListener("DOMContentLoaded", (e=>{
+    Store.displayBooks()
+    e.preventDefault()
+}))
+
+
+  document.getElementById('btns').addEventListener('click', e=>{
+    
+    const name = document.getElementById('nameofitem').innerText
+    // const size = document.getElementById('btn').innerText
+    e.preventDefault()
+  })
+  document.getElementById('btnm').addEventListener('click', e=>{
+    console.log(console.log('Clcikec Btn', document.getElementById('btnm')))
+  })
+  document.getElementById('btnl').addEventListener('click', e=>{
+    console.log(console.log('Clcikec Btn', document.getElementById('nameofitem').innerText))
+    console.log(document.getElementById("btnl").innerText)
+
+
+  })
+</script>
 </html>

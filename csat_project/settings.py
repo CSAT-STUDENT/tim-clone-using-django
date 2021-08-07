@@ -49,8 +49,6 @@ INSTALLED_APPS = [
     #our app and local setting will go here...
     'apis',
     'frontend',
-    'socketapp',
-    'channels',
     'employee'
 ]
 
