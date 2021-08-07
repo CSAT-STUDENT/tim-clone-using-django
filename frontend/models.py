@@ -37,7 +37,29 @@ class Item(models.Model):
     def __str__(self):
         return self.item_type
     
+class Cold(models.Model):
+    name = models.CharField(max_length=256)
+    price_s = models.IntegerField()
+    price_m = models.IntegerField()
+    price_l = models.IntegerField()
+    desc = models.TextField()
+    type = models.CharField(max_length=200, choices=DRINK_TYPE )
 
+
+    def __str__(self):
+        return self.name
+
+class Hot(models.Model):
+    name = models.CharField(max_length=256)
+    price_s = models.IntegerField()
+    price_m = models.IntegerField()
+    price_l = models.IntegerField()
+    desc = models.TextField()
+    type = models.CharField(max_length=200, choices=DRINK_TYPE )
+
+
+    def __str__(self):
+        return self.name
 
 
 

@@ -14,8 +14,6 @@ def dashboard(request):
     return render(request, 'webpages/dashboard.html', data)
 
 
-
-
 @login_required(login_url="login_page")
 def cold(request):
     cold_items = Beverages_updated.objects.filter(type='COLD')
